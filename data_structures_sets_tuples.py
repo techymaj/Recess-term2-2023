@@ -81,6 +81,7 @@ aSet = {"apple", "banana", "cherry", 2, 3, 5,}
 
 
 
+# ASSIGNEMT ONE
 
 set1 = {"apple", "banana", "cherry", 2, 3, 5,}
 set2 = {"New World Order", "New World Order 2"}
