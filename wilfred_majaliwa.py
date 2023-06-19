@@ -19,9 +19,9 @@ name = "Wilfred Majaliwa"
 recess = 2
 
 # Print out the variables
-print("Your name is " 
-      + name 
-      + " and you are doing your " 
+print("Your name is "
+      + name
+      + " and you are doing your "
       + str(recess) + "nd recess")
 
 # Data types
@@ -56,6 +56,3 @@ print("Gender is: " + str(gender))
 
 # jeff.geoff.cis@gmail.com
 
-x = 3
-
-print(type(x))
