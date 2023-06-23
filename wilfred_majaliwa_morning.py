@@ -27,6 +27,33 @@ screen.grid(
     columnspan=6
 )
 
+# DEFINE FUNCTIONS
+operation = ""
+
+def add(symbol):
+    global operation
+    operation += str(symbol)
+    screen.delete(1.0, "end")
+    screen.insert(1.0, operation)
+
+def evaluate():
+    global operation
+    try:
+        operation = str(eval(operation))
+        # reset operation variable
+        screen.delete(1.0, "end")
+        screen.insert(1.0, operation)
+    except:
+        clear()
+        screen.insert(1.0, "Cannot divide by zero")
+    # finally:
+    #     operation = ""
+
+def clear():
+    global operation
+    operation = ""
+    screen.delete(1.0, "end")
+
 # MISC
 # note: command=clear() woould immediately call the function
 btn_clear = tk.Button(window, text="AC", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: clear())
@@ -36,14 +63,14 @@ btn_clear.grid(
 )
 
 # Left bracket (
-btn_left_bracket = tk.Button(window, text="(", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: clear())
+btn_left_bracket = tk.Button(window, text="(", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: add("()"))
 btn_left_bracket.grid(
     row=2,
     column=2
 )
 
 # Right bracket )
-btn_right_bracket = tk.Button(window, text=")", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: clear())
+btn_right_bracket = tk.Button(window, text=")", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: add(")"))
 btn_right_bracket.grid(
     row=2,
     column=3
@@ -150,36 +177,10 @@ btn_addition.grid(
     column=4
 )
 # Equals
-btn_equals = tk.Button(window, text="=", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: add("="))
+btn_equals = tk.Button(window, text="=", width=btn_width, height=btn_height, font=("Arial", 16), command=evaluate)
 btn_equals.grid(
     row=6,
     column=4
 )
-
-operation = ""
-
-def add(symbol):
-    global operation
-    operation += str(symbol)
-    screen.delete(1.0, "end")
-    screen.insert(1.0, operation)
-
-def evaluate():
-    global operation
-    try:
-        operation = str(eval(operation))
-        # reset operation variable
-        screen.delete(1.0, "end")
-        screen.insert(1.0, operation)
-    except ZeroDivisionError as err:
-        clear()
-        screen.insert(1.0, err)
-
-def clear():
-    global operation
-    operation = ""
-    screen.delete(1.0, "end")
-
-
 
 window.mainloop()
