@@ -43,7 +43,7 @@ def evaluate():
         # reset operation variable
         screen.delete(1.0, "end")
         screen.insert(1.0, operation)
-    except:
+    except SyntaxError:
         clear()
         screen.insert(1.0, "Cannot divide by zero")
     # finally:
