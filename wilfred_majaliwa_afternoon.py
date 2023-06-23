@@ -1,139 +1,315 @@
-# Dictionaries
-# 1. key-value. 2. key is unique. 3. key is immutable. Ordered. value is mutable. value can be duplicated
-example = {
-    "name": "Wilfred Majaliwa",
-    "age": 29,
-}
 
-print(example.keys())
+# LISTS
 
-# int, floats, complex numbers
-# ints, floats & strings support python casting
+# 1. Create a list with 5 items (names of people) 
+# and write a python program to output the 2nd item.
+first_list = ["Bezos", "Mark", "Elon", "Smith", "Tate"]
+second_item = first_list[1]
+print(second_item)
 
-# x = int(2.0) + str(2) + float(3)
-# print(x) # Type Error
+# 2. Write a python program to change the value of the first item to a new value
+first_item = first_list[0]
+first_item = "Wil"
+print(first_item)
 
-print("#" * 80)
-print("# 1. Exercise. Return a list of all values in a dictionary")
-print("#" * 80)
+# 3. Write a python program to add a sixth item to the first_list
+sixth_item = first_list.append("Jada")
+print(first_list)
 
-dictionary = {
-    5: "Five",
-    4: "Four",
-    3: "Three",
-    2: "Two",
-    1: "One"
-}
+# 4. Write a python program to add “Bathel” as the 3rd item in your first_list
+first_list[2] = "Bathel"
+print(first_list)
 
-print(dictionary.values())
-print("\n")
+#5.  Write a python program to remove the 4th item from the first_list
+fourth_item = first_list[3]
+first_list.remove(fourth_item)
+print(first_list)
 
-print("#" * 80)
-print("# 2. Exercise. Check if a key does exist in your dictionary")
-print("#" * 80)
+# 6. Use negative indexing to print the last item in your first_list
+print(first_list[-1])
 
-entered_key = input("Enter a key: ")
-try: 
-    entered_key = int(entered_key)    
-except ValueError as error: 
-    print("Key must be a number")
+# 7. Create a new list with 7 items and use a range of indexes 
+# to print the 3rd, 4th and 5th items.
+another_list = [1, 2, 3, 4, 5, 6, 7]
+for item in range(0, 7):
+    print(another_list[2], another_list[3], another_list[4])
 
-my_key = dictionary.get(entered_key, -1)
-if my_key == -1:
-    print(f"The key {entered_key} does not exist in the dictionary")
-else:
-    print(f"The key {entered_key} exists in the dictionary")
-print("\n")
+# 8. Write a list of countries and make a copy of it.
+countries_list = ["Uganda", "Kenya", "Tanzania"]
+copy_of_countries_list = countries_list.copy()
+print(copy_of_countries_list)
 
-print("#" * 80)
-print("# 3. Exercise. How to change dictionary items. How to update items.")
-print("#" * 80)
+# 9. Write a python program to loop through the list of countries
+for country in countries_list:
+    print(country)
 
-dictionary[5] = "Taano wange"
-# dictionary.get(2) = "Bili" # This is wrong
-print(dictionary)
-print("\n")
+# 10. Write a list of animal names 
+# and sort them in both descending and ascending order.
+animal_names = ["Dog", "Cat", "Horse"]
+animal_names.sort()
+print(f"Ascending: {animal_names}")
+animal_names.sort(reverse = True)
+print(f"Descending: {animal_names}")
 
-print("#" * 80)
-print("# 4. Exercise. How to add dictionary items. How to remove items.")
-print("#" * 80)
-# Add
-dictionary.update({
-    6: "Mukaaga"
+# 11. Using the list above, write a python program 
+# to output only animal names with the letter
+# ‘a’ in them
+for animal in animal_names:
+    if animal.__contains__("a"):
+        print(animal)
+
+# 12. Write two lists, one containing your 
+# first names and the other your second names. Join the two lists.
+first_names = ["John", "Sam", "Mary"]
+second_names = ["Ssebuliba", "Majaliwa", "Lutalo"]
+
+first_names.extend(second_names)
+print(first_names)
+
+# TUPLES
+
+# 1. Consider the tuple below;
+# x = (“samsung”, “iphone”, “tecno”, “redmi”)
+# Write a python program to output your favorite phone brand.
+x = ("Samsung", "iPhone", "tecno", "redmi")
+fav_phone_brand = x[0]
+print(fav_phone_brand)
+
+# 2. Use negative indexing to print the 2nd last item in your tuple.
+second_last_item = x[-2]
+print(second_last_item)
+
+# 3. Using the phones list above, 
+# write a python program to update “iphone” to “itel”
+convert_x = list(x)
+convert_x[1] = "itel"
+tupled = tuple(convert_x)
+print(tupled)
+
+# 4. Write a python program to add “Huawei” to your tuple.
+add_huawei = list(x)
+add_huawei.append("Huawei")
+tupled_2 = tuple(add_huawei)
+print(tupled_2)
+
+# 5. Write a python program to loop through the tuple above.
+for item in tupled_2:
+    print(item)
+
+# 6. Write a python program to remove/delete 
+# the first item in your tuple.
+remove_first_item = list(tupled_2)
+remove_first_item.pop(0) # Removes Samsung
+tupled_3 = tuple(remove_first_item)
+print(tupled_3)
+
+# 7. Using the tuple() constructor, 
+# create a tuple of the cities in Uganda.
+cities_in_uganda = tuple(("Kampala", "Masaka", "Mukono", "Jinja"))
+print(cities_in_uganda)
+print(type(cities_in_uganda))
+
+# 8. Write a python program to unpack your tuple.
+for city in cities_in_uganda:
+    print(city)
+
+# 9. Use a range of indexes to print 
+# the 2nd, 3rd and 4th cities in your tuple above.
+print(cities_in_uganda[1:4])
+
+# 10.  Write two tuples, one containing your 
+# first names and the other your second names. Join the two tuples.
+first_names = ("Wilfred", "John", "Sara", "Mercy")
+sur_names = ("Majaliwa", "Lutalo", "Muhumuza", "Kira")
+full_name = first_names + sur_names
+print(full_name)
+
+# 11. Create a tuple of colors and multiply it by 3.
+colors = ("Red", "Orange", "Yellow")
+multiple_colors = colors * 3
+print(multiple_colors)
+print(type(multiple_colors))
+
+# 12. Return the number of times 8 appears in this tuple
+    #   thistuple = (1, 3, 7, 8, 7, 5, 4, 6, 8, 5)
+thistuple = (1, 3, 7, 8, 7, 5, 4, 6, 8, 5)
+counter = 0
+for number in thistuple:
+    if number == 8:
+        counter = counter + 1
+print(counter)
+
+# SETS
+
+# 1. Use the set() constructor 
+# to create a set of 3 of your favorite beverages.
+beverages = set({
+    "Smirnoff", "Nile Special", "Almeca"
 })
-print(dictionary)
-# Remove
-dictionary.popitem() # The popitem() method removes the item that was last inserted into the dictionary
-print(dictionary)
-print("\n")
+print(beverages)
+print(type(beverages))
 
-print("#" * 80)
-print("# 5. Exercise. How to loop through a dictionary. How to nest a dictionary.")
-print("#" * 80)
+# 2. Use the correct method to add 2 more items to the beverages set.
+beverages.add("Club")
+beverages.add("Jameson")
+print(beverages)
 
-# Loop through a dictionary
-for key, value in dictionary.items():
-    print(f"Key: {key}, Value: {value}")
+# 3. Given the set below;
+# mySet = {“oven”, “kettle”, “microwave”, “refrigerator”}
+# Check if microwave is present in the set.
+mySet = {"oven", "kettle", "microwave", "refrigerator"}
 
-# Nest a dictionary
+check_item = "microwave"
+# Un comment to use user input
+# check_item = str(input("Enter the item to check: ").lower())
+
+if check_item in mySet:
+    print(f"The item {check_item} exists")
+else:
+    print(f"The item {check_item} doesn't exist")
+
+# 4. Write a python program to remove “kettle” from the set above.
+mySet.remove("kettle")
+print(mySet)
+
+# 5. Write a python program to loop through the set above.
+for item in mySet:
+    print(item)
+
+# 6. Write a set of 4 items and a list of two items. 
+# Write a python program to add elements in
+# the list to elements in the set.
+set_of_4 = {"One", "Two", "three", "four"}
+list_of_two = [1, 2]
+
+union_collection = set_of_4.union(list_of_two)
+print(union_collection)
+# ALSO
+set_of_4.update(list_of_two)
+print(set_of_4)
+
+# 7. Write two sets, one containing your ages 
+# and the other your first names. Join the two sets.
+first_set = {29, 21, 22}
+first_names = {"Majaliwa", "John", "Susan"}
+
+new_set = first_set.union(first_names)
+print(new_set)
+
+# STRINGS
+
+# 1. Declare two variables, an integer and a string 
+# and use the correct method to concatenate the two variables.
+age = 29
+name = "Majaliwa"
+
+bio = str(age) + " " + name
+print(bio)
+# ALSO
+print(f"{age} {name}")
+
+# 2. Consider the example below;
+# txt = “ Hello, Uganda! ”
+# Output the string without spaces at the beginning, 
+# in the middle and at the end.
+
+txt = " Hello, Uganda! "
+stripped = txt.strip()
+print(stripped)
+
+# 3. Write a python program to 
+# convert the value of ‘txt’ to uppercase.
+capitalize = stripped.upper()
+print(capitalize)
+
+# 4. Write a python program to replace character 
+# ‘U’ with ‘V’ in the string above.
+replaced = stripped.replace("U", "V")
+print(replaced)
+
+# 5. Using the code below, write a python program 
+# to return a range of characters in the 2nd,
+# 3rd and 4th position.
+# y = “I am proudly Ugandan”
+y = "I am proudly Ugandan"
+print(y[1:4])
+
+# 6. The piece of code below will give an error when output; 
+# x = “All “Data Scientists” are cool!”
+# Write a python program to correct it.
+x = 'All "Data Scientists" are cool!'
+print(x)
+
+
+# DICTIONARIES 
+
+# 1. With reference to the dictionary below, 
+# write a python program to print the value of the shoe size.
+shoes = {
+    "brand" : "Nick",
+    "color" : "black", 
+    "size" : 40
+}
+print(f"the value of shoes is {len(shoes)}")
+
+# 2. Write a python program to change the value “Nick” to “Adidas”
+shoes["brand"] = "Adidas"
+print(shoes)
+
+# 3. Write a python program to add a key/value pair 
+# "type”: "sneakers" to the dictionary
+shoes.update({
+    "type": "sneakers"
+})
+
+print(shoes)
+
+# 4. Write a python program to return a 
+# list of all the keys in the dictionary above.
+list_of_all_keys = shoes.keys()
+print(list_of_all_keys)
+
+# 5. Write a python program to return a 
+# list of all the values in the dictionary above.
+list_of_all_values = shoes.values()
+print(list_of_all_values)
+
+# 6. Check if the key “size” exists in the dictionary above.
+for key in shoes.keys():
+    if key == "size":
+        print(f"{key} exists")
+
+# 7. Write a python program to loop through the dictionary above.
+for item in shoes:
+    print(item)
+
+# 8. Write a python program to remove “color” from the dictionary.
+shoes.pop("color")
+print(shoes) 
+
+# 9. Write a python program to empty the dictionary above.
+shoes.clear()
+print(f"shoes size is {len(shoes)}")
+
+# 10. Write a dictionary of your choice and make a copy of it.
+dictionary = {
+    "name": "Majaliwa Wilfred",
+    "age": 29
+}
+
+dictionary_copy = dictionary.copy()
+print(dictionary_copy)
+
+# 11. Write a python program to show nested dictionaries
 nested_dictionary = {
-    "name": "Wilfred Majaliwa",
-    "age": 29,
-    "children": {
-        "child1": {
-            "name": "Majaliwa Jr.",
-            "age": 5
-        },
-        "child2": {
-            "name": "Majaliwa Jr. Jr.",
-            "age": 3
-        }
+    "original": {
+        "name": "Majaliwa Wilfred",
+        "age": 29
+    },
+    "another": {
+        "me": "You",
+        "him": "her"
     }
 }
+
 print(nested_dictionary)
-print("\n")
-
-print("#" * 80)
-print("# 6. Exercise. Determine the length of a string using the len() function.")
-print("#" * 80)
-
-my_string = "Hello World"
-print(len(my_string))
-print("\n")
-
-print("#" * 80)
-print("# 7. Exercise. Iterate through each character in a string using a for loop.")
-print("#" * 80)
-
-for character in my_string:
-    print(character)
-print("\n")
-
-print("#" * 80)
-print("# 8. Exercise. Slice a string to extract specific portions of it.")
-print("#" * 80)
-
-print(my_string[0:5]) # prints the characters from index 0 to 4
-print("\n")
-
-print("#" * 80)
-print("# 9. Exercise. Perform arithmetic operations with numbers and print the results.")
-print("#" * 80)
-
-print(2 + 2) # Addition
-print(2 - 2) # Subtraction
-print(2 * 2) # Multiplication
-print(2 / 2) # Division
-print(2 % 2) # Modulus
-print(2 ** 2) # 2 to the power of 2
-print("\n")
-
-print("#" * 80)
-print("# 10. Exercise. Use boolean values and conditions to control program flow.")
-print("#" * 80)
-
-if 2 == 2:
-    print("2 is equal to 2")
-else:
-    print("2 is not equal to 2")
-print("\n")
