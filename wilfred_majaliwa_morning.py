@@ -1,142 +1,185 @@
-# Author: WILFRED MAJALIWA
+# Author: Majaliwa Wilfred
 # Session: Morning
+# Assignment: Create a simple calculator program with a GUI Interface.
+# Make the title of the calculator program window your name e.g "Wilfred Majaliwa Simple Calculator"
 
-# CONDITIONAL LOGIC
+# Tcl/Tk version: 8.6
 
-# if else
-print("#" * 50)
-print("# 1. Conditional logic with if else.")
-print("#" * 50)
-age = 17
+# import TKInter as tk
+import tkinter as tk
 
-if age > 18 or age == 18:
-    print('adult')
-elif age <= 12:
-    print('kid')
-else:
-    print('teenager')
+window = tk.Tk()
+# set window dimensionns
+calc_height = "396"
+calc_width = "304"
+btn_width = 4
+btn_height = 3
 
-# Dictionaries
-# 1. key-value. 2. key is unique. 3. key is immutable. 
-# 4. value is mutable. 5. value can be duplicated. Ordered
-print("\n")
-print("#" * 50)
-print("# 2. Dictionaries.")
-print("#" * 50)
-d = {'Michael': 95, 'Bob': 75, 'Tracy': 85}
-print(d['Michael'])
-print(d.get('Michael')) # Another way to get value from dict. But it has a default value of None
-print(d.get('Me', -1)) # -1 is default value. Useful when key is not in dict
-print(len(d))
+window.geometry(f"{calc_width}x{calc_height}")
+# window.grid_columnconfigure(0, weight=1)
 
+# set title of window/app
+window.title("Wilfred Majaliwa Simple Calculator")
 
-# Loops. DO & WHILE
-# for loop
-names = ['Michael', 'Bob', 'Tracy', 'Bob']
-print("\n")
-print("#" * 50)
-print("# 3. The for loop.")
-print("#" * 50)
-for name in names:
-    print(name)
+screen = tk.Text(window, width=33, height=btn_height, font=('Arial', 16))
+screen.grid(
+    row= 1,
+    columnspan=6
+)
 
-print("\n")
-print("#" * 50)
-print("# 4. The while loop.")
-print("#" * 50)
-i = len(names) - 1
-while i >= 0:
-    print(names[i])
-    i -= 1
+# MISC
+# note: command=clear() woould immediately call the function
+btn_clear = tk.Button(window, text="AC", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: clear())
+btn_clear.grid(
+    row=2,
+    column=1
+)
 
-# CONTINUE & BREAK STATEMENTS
-names = ['Michael', 'Bob', 'Tracy', 'Bob']
-print("\n")
-print("#" * 50)
-print("# 5. Using break and continue statements.")
-print("#" * 50)
+# Left bracket (
+btn_left_bracket = tk.Button(window, text="(", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: clear())
+btn_left_bracket.grid(
+    row=2,
+    column=2
+)
 
-for name in names:
-    # if name == 'Bob':
-    #     print(name)
-    #     continue
-    
-    if name == 'Bob':
-        print(name)
-        break
-    
-# EXCEPTION HANDLING USING TRY & EXCEPT
-numbers = [1, 2, 3]
-print("\n")
-print("#" * 50)
-print("# 6. Exception Handling using try & except.")
-print("#" * 50)
+# Right bracket )
+btn_right_bracket = tk.Button(window, text=")", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: clear())
+btn_right_bracket.grid(
+    row=2,
+    column=3
+)
 
-try:
-    print(numbers[5])
-except IndexError as error:
-    print("IndexError: ", error)
-finally:
-    print("This will always execute")
+# Number Buttons
 
-print("\n")
-print("#" * 50)
-print("# 7. Exercise.")
-print("#" * 50)
-""" 
-    EXERCISE ON EXCEPTION HANDLING, DICTIONARIES, LOOPS, AND CONTROL FLOW
-    Prompt students on a scale of 1 - 10, to rate their mental health
-"""
+btn_7 = tk.Button(window, text="7", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: add(7))
+btn_7.grid(
+    row=3,
+    column=1
+)
 
-emotion = {
-    1: 'Too bad.',
-    2: 'Take a walk.',
-    3: 'Remember the movie Joy.',
-    4: 'Sorrow is a valid emotion.',
-    5: 'Not too bad.',
-    6: 'Take a deep breath.',
-    7: 'You are loved.',
-    8: '8 is good. 8 is great.',
-    9: 'You are strong.',
-    10: 'You are beautiful.',
-}
+btn_8 = tk.Button(window, text="8", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: add(8))
+btn_8.grid(
+    row=3,
+    column=2
+)
 
-emote = ''
-CRED = '\033[91m'
-CEND = '\033[0m'
-SUCCESS = '\033[92m'
+btn_9 = tk.Button(window, text="9", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: add(9))
+btn_9.grid(
+    row=3,
+    column=3
+)
 
+btn_4 = tk.Button(window, text="4", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: add(4))
+btn_4.grid(
+    row=4,
+    column=1
+)
 
-while(emote != 'q'):
-    emote = input("On a scale of 1 - 10, how are you feeling today? Enter 'q' to quit. ")
+btn_5 = tk.Button(window, text="5", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: add(5))
+btn_5.grid(
+    row=4,
+    column=2
+)
 
+btn_6 = tk.Button(window, text="6", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: add(6))
+btn_6.grid(
+    row=4,
+    column=3
+)
+
+btn_1 = tk.Button(window, text="1", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: add(1))
+btn_1.grid(
+    row=5,
+    column=1
+)
+
+btn_2 = tk.Button(window, text="2", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: add(2))
+btn_2.grid(
+    row=5,
+    column=2
+)
+
+btn_3 = tk.Button(window, text="3", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: add(3))
+btn_3.grid(
+    row=5,
+    column=3
+)
+
+btn_0 = tk.Button(window, text="0", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: add(0))
+btn_0.grid(
+    row=6,
+    column=1
+)
+
+btn_dot = tk.Button(window, text=".", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: add())
+btn_dot.grid(
+    row=6,
+    column=2
+)
+
+btn_del = tk.Button(window, text="del", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: add())
+btn_del.grid(
+    row=6,
+    column=3
+)
+
+# Operator Buttons
+
+# Divide
+btn_divide = tk.Button(window, text="÷", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: add("÷"))
+btn_divide.grid(
+    row=2,
+    column=4
+)
+# Multiplication
+btn_multiplication = tk.Button(window, text="*", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: add("*"))
+btn_multiplication.grid(
+    row=3,
+    column=4
+)
+# Subtraction
+btn_subtraction = tk.Button(window, text="-", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: add("-"))
+btn_subtraction.grid(
+    row=4,
+    column=4
+)
+# Addition
+btn_addition = tk.Button(window, text="+", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: add("+"))
+btn_addition.grid(
+    row=5,
+    column=4
+)
+# Equals
+btn_equals = tk.Button(window, text="=", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: add("="))
+btn_equals.grid(
+    row=6,
+    column=4
+)
+
+operation = ""
+
+def add(symbol):
+    global operation
+    operation += str(symbol)
+    screen.delete(1.0, "end")
+    screen.insert(1.0, operation)
+
+def evaluate():
+    global operation
     try:
-        if emote == 'q':
-            print(SUCCESS + "Goodbye. Have a great day!" + CEND)
-            print("\n")
-            break
-        else:
-            emote = int(emote)
-    except ValueError:
-        if emote == '':
-            print(CRED + "You didn't enter anything." + CEND)
-        else:
-            print(CRED + f"You entered '{emote}'. Please enter a number between 1 - 10." + CEND)
-        print("\n")
-        continue
+        operation = str(eval(operation))
+        # reset operation variable
+        screen.delete(1.0, "end")
+        screen.insert(1.0, operation)
+    except ZeroDivisionError as err:
+        clear()
+        screen.insert(1.0, err)
 
-    if emote in emotion:
-        print(SUCCESS + emotion[emote] + CEND)
-        print(SUCCESS + "Thank you for rating your mental health." + CEND)
-        print("\n")
-    else:
-        print(CRED + "I don't recognize that rating." + CEND)
-        print("\n")
+def clear():
+    global operation
+    operation = ""
+    screen.delete(1.0, "end")
 
 
 
-
-
-
-
-
+window.mainloop()
