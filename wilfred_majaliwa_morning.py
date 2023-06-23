@@ -33,26 +33,35 @@ operation = ""
 def add(symbol):
     global operation
     operation += str(symbol)
-    screen.delete(1.0, "end")
+    screen.delete(1.0, tk.END)
     screen.insert(1.0, operation)
 
 def evaluate():
     global operation
     try:
         operation = str(eval(operation))
-        # reset operation variable
-        screen.delete(1.0, "end")
+        screen.delete(1.0, tk.END)
         screen.insert(1.0, operation)
-    except SyntaxError:
+    except Exception as err:
         clear()
-        screen.insert(1.0, "Cannot divide by zero")
+        screen.insert(1.0, f"Error: {err}")
     # finally:
     #     operation = ""
 
 def clear():
     global operation
     operation = ""
-    screen.delete(1.0, "end")
+    screen.delete(1.0, tk.END)
+
+# def clear_single():
+#     global operation
+#     operation[:-1]
+#     screen.delete(1.0, -1)
+def clear_single():
+    global operation
+    operation = operation[:-1]  # Remove the last character from the 'operation' variable
+    screen.delete("end-2c", "end-1c")  # Delete the last character from the 'screen' widget
+
 
 # MISC
 # note: command=clear() woould immediately call the function
@@ -63,7 +72,7 @@ btn_clear.grid(
 )
 
 # Left bracket (
-btn_left_bracket = tk.Button(window, text="(", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: add("()"))
+btn_left_bracket = tk.Button(window, text="(", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: add("("))
 btn_left_bracket.grid(
     row=2,
     column=2
@@ -138,13 +147,13 @@ btn_0.grid(
     column=1
 )
 
-btn_dot = tk.Button(window, text=".", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: add())
+btn_dot = tk.Button(window, text=".", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: add("."))
 btn_dot.grid(
     row=6,
     column=2
 )
 
-btn_del = tk.Button(window, text="del", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: add())
+btn_del = tk.Button(window, text="⌫", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: clear_single())
 btn_del.grid(
     row=6,
     column=3
@@ -153,7 +162,7 @@ btn_del.grid(
 # Operator Buttons
 
 # Divide
-btn_divide = tk.Button(window, text="÷", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: add("÷"))
+btn_divide = tk.Button(window, text="/", width=btn_width, height=btn_height, font=("Arial", 16), command=lambda: add("/"))
 btn_divide.grid(
     row=2,
     column=4
