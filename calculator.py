@@ -170,7 +170,7 @@ btn_divide.grid(
     column=4
 )
 # Multiplication
-btn_multiplication = tk.Button(window, text="*", width=btn_width, height=btn_height, font=("Arial", font_size), command=lambda: add("*"))
+btn_multiplication = tk.Button(window, text="x", width=btn_width, height=btn_height, font=("Arial", font_size), command=lambda: add("*"))
 btn_multiplication.grid(
     row=3,
     column=4
