@@ -9,7 +9,7 @@
 import ttkbootstrap as tk
 from ttkbootstrap.constants import *
 
-window = tk.Window(themename="cyborg")
+window = tk.Window(themename="solar")
 # set window dimensionns
 calc_height = "269"
 calc_width = "337"
