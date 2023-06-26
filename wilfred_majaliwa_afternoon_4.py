@@ -90,7 +90,7 @@ import math
 def product(x, y):
     return x * y
 
-print(product(2, 3))
+# print(product(2, 3))
 
 
 # import everything from the file
@@ -102,6 +102,11 @@ print(product(2, 3))
 # use as if there is a conflict
 import python_modules as pm # pm is the alias. 
 
+def display_numbers(number1, number2):
+    print(f"Printed from current file: {number1} and {number2}")
+
+display_numbers(1, 2)
+pm.display_numbers(1, 2)
 print(pm.add_two_numbers(1, 2))
 print(pm.subtract_two_numbers(1, 2))
 print(pm.multiply_two_numbers(1, 2))
