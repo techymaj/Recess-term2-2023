@@ -120,4 +120,23 @@ def cube_root(number):
 print(cube_root(27))
 
 
+# input & output in python
+
+# input() function
+# input is taken as a string
+
+name = input("Enter your name: ")
+# print("Hello " + name)
+
+# output
+# print() function  
+# print("Hello World")
+
+
+# multiple input values on the same line
+name, age = map(str, input("Enter your name and age: ").split())
+print(name)
+print(age)
+
+
 
