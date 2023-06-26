@@ -5,6 +5,7 @@
 - **Data Structures** 🧱
 - **Control Flow** ⚙️
 - **Functions** ♻️
+- **Modules** ♻️💼
 - **Object Oriented Programming**
   - **Classes** 🎩
   - **Encapsulation** 💼
@@ -21,4 +22,4 @@
 - **[Data Structures Exercises on Lists, Tuples, Sets, Strings & Dictionaries | Afternoon Session](https://github.com/techymaj/recess-2/blob/main/data_structures_exercises.py)** 🧱📝💪
 ### **Day 4**
 - **[Classes and Encapsulation | Morning Session](https://github.com/techymaj/recess-2/blob/main/wilfred_majaliwa_morning_4.py)** 🎩✨💼
-- **[Functions | Afternoon Session](https://github.com/techymaj/recess-2/blob/main/wilfred_majaliwa_afternoon_4.py)** ♻️💪
+- **[Functions, Modules | Afternoon Session](https://github.com/techymaj/recess-2/blob/main/wilfred_majaliwa_afternoon_4.py)** ♻️💪
