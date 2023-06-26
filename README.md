@@ -4,6 +4,9 @@
 - **Variables** 📦
 - **Data Structures** 🧱
 - **Control Flow** ⚙️
+- **Object Oriented Programming**
+  - Classes 🎩
+  - Encapsulation 💼
 
 ## **Exercises** 🏋️‍♀️
 ### **Day 1**
@@ -15,3 +18,5 @@
 ### **Day 3**
 - **[Calculator App With TKInter | Morning Session](https://github.com/techymaj/recess-2/blob/main/calculator.py)** 🖩💡
 - **[Data Structures Exercises on Lists, Tuples, Sets, Strings & Dictionaries | Afternoon Session](https://github.com/techymaj/recess-2/blob/main/data_structures_exercises.py)** 🧱📝💪
+### **Day 4**
+- **[Classes and Encapsulation | Morning Session](https://github.com/techymaj/recess-2/blob/main/wilfred_majaliwa_morning_4.py)** 🎩✨💼
