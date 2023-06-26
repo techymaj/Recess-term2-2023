@@ -72,11 +72,47 @@ def return_boolean_value():
 
 # Return a List value
 def return_list_value():
-    return [1, 2, 3, 4, 5]
+    return [1, "Me", 3, 4, 5]
 
 
 
 # Modules
 # A module is a file containing a set of 
 # functions to include in your application
+
+# import the module
+# math is a built-in module
+import math
+
+# use the module
+# print(math.pi)
+
+def product(x, y):
+    return x * y
+
+print(product(2, 3))
+
+
+# import everything from the file
+# from python_modules import * # import all
+
+# # import specific functions
+# from python_modules import add_two_numbers, subtract_two_numbers 
+
+# use as if there is a conflict
+import python_modules as pm # pm is the alias. 
+
+print(pm.add_two_numbers(1, 2))
+print(pm.subtract_two_numbers(1, 2))
+print(pm.multiply_two_numbers(1, 2))
+print(pm.divide_two_numbers(1, 2))
+
+
+# cude root of a number
+def cube_root(number):
+    return math.pow(number, 1/3)
+
+print(cube_root(27))
+
+
 
