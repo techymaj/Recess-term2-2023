@@ -230,7 +230,7 @@ class Employee:
 
     
 employee = Employee("Wilfred", 850000)
-employee.display_salary()
+employee.display_salary() # prints salary = 850000
 employee.increase_salary(1000000)
 employee.__salary = 5000000 # this will not work because salary is encapsulated. it's restricted and can't be modified from outside the class
 employee.display_salary() # prints new_salary = 1000000
