@@ -103,21 +103,22 @@ def product(x, y):
 import python_modules as pm # pm is the alias. 
 
 def display_numbers(number1, number2):
-    print(f"Printed from current file: {number1} and {number2}")
+    # print(f"Printed from current file: {number1} and {number2}")
+    pass
 
 display_numbers(1, 2)
 pm.display_numbers(1, 2)
-print(pm.add_two_numbers(1, 2))
-print(pm.subtract_two_numbers(1, 2))
-print(pm.multiply_two_numbers(1, 2))
-print(pm.divide_two_numbers(1, 2))
+# print(pm.add_two_numbers(1, 2))
+# print(pm.subtract_two_numbers(1, 2))
+# print(pm.multiply_two_numbers(1, 2))
+# print(pm.divide_two_numbers(1, 2))
 
 
 # cude root of a number
 def cube_root(number):
     return math.pow(number, 1/3)
 
-print(cube_root(27))
+# print(cube_root(27))
 
 
 # input & output in python
@@ -125,7 +126,7 @@ print(cube_root(27))
 # input() function
 # input is taken as a string
 
-name = input("Enter your name: ")
+# name = input("Enter your name: ")
 # print("Hello " + name)
 
 # output
@@ -134,9 +135,19 @@ name = input("Enter your name: ")
 
 
 # multiple input values on the same line
-name, age = map(str, input("Enter your name and age: ").split())
-print(name)
-print(age)
+# name, age = map(str, input("Enter your name and age: ").split())
+# print(name)
+# print(age)
 
+my_list = list(map(str, input("Enter your fav movies: ").split()))
+# map function takes two arguments. 
+# the map function is used to convert the input to a specific data type
+# 1. the data type you want to convert to
+# 2. the input() function
+# split() function splits the input into a list
 
+print(my_list)
+
+my_set = set(map(str, input("Enter your fav artists: ").split()))
+print(my_set)
 

@@ -19,4 +19,5 @@ def divide_two_numbers(number1, number2):
 
 
 def display_numbers(number1, number2):
-    print(f"Printed from python_modules: {number1} and {number2}")
+    # print(f"Printed from python_modules: {number1} and {number2}")
+    pass
