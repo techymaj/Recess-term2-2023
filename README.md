@@ -24,3 +24,11 @@
 ### **Day 4**
 - **[Classes and Encapsulation | Morning Session](https://github.com/techymaj/recess-2/blob/main/wilfred_majaliwa_morning_4.py)** 🎩✨💼
 - **[Functions, Modules, I/O | Afternoon Session](https://github.com/techymaj/recess-2/blob/main/wilfred_majaliwa_afternoon_4.py)** ♻️💪📥📤
+
+## **Python Project | Solidify concepts** 🚀💡
+### Recipe for a great project (Guidelines) 📜🌟
+- Easy to run and use. (3 installation steps, max) ✨
+- Uniqueness 🌟
+- Imply a deep knowledge of programming 🧠💻
+
+### **Project: SACCO FUND (Open Source)** 💼🌍
