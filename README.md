@@ -24,6 +24,7 @@
 ### **Day 4**
 - **[Classes and Encapsulation | Morning Session](https://github.com/techymaj/recess-2/blob/main/wilfred_majaliwa_morning_4.py)** 🎩✨💼
 - **[Functions, Modules, I/O | Afternoon Session](https://github.com/techymaj/recess-2/blob/main/wilfred_majaliwa_afternoon_4.py)** ♻️💪📥📤
+### **Day 5**
 - **[Receipt Book GUI App | Morning Session](https://github.com/techymaj/recess-2/blob/main/wilfred_majaliwa_morning5.py)** 🧾💡💼
 
 ## **Python Project | Solidify concepts** 🚀💡
