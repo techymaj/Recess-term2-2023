@@ -1,5 +1,5 @@
 # Author: Wilfred Majaliwa
-# Date: 2021-06-30
+# Date: 2023-07-01
 # Description: A receipt printing program with a GUI
 # Session: Morning
 # Github: https://github.com/techymaj/recess-2.git
@@ -9,6 +9,7 @@
 # install ttkbootstrap using <pip install ttkbootstrap> or <pip3 install ttkbootstrap>
 
 # import ttk bootstrap
+import os
 from tkinter import messagebox
 import ttkbootstrap as ttk
 import ttkbootstrap.tableview as tv
@@ -149,7 +150,7 @@ class ReceiptBook(ttk.Frame):
             paginated=True,
             searchable=True,
             bootstyle=INFO,
-            stripecolor=("#f5f5f5", "white"),
+            stripecolor=("#808080", "white")
         )  
 
         table.pack(fill=BOTH, expand=YES, padx=10, pady=10)
@@ -157,6 +158,8 @@ class ReceiptBook(ttk.Frame):
 
 
 if __name__ == "__main__":
-    app = ttk.Window("Receipt Book", "darkly", "receipt_maker.png")
+    # get the current working directory
+    cwd = os.getcwd()
+    app = ttk.Window("Wilfred Majaliwa's Receipt Book", "darkly", "receipt_maker.png")
     ReceiptBook(app)
     app.mainloop()
