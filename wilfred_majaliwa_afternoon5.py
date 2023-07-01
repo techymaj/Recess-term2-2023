@@ -222,6 +222,7 @@ print("Overwrite the content")
 print("Opening and reading the file before overwriting...")
 y_n = input(f"Do you wish to overwrite {filename}.{extension}? y/n: ")
 if y_n == "y":
+    # only open if you wish to overwite otherwise, file becomes empty
     f = open(f"{filename}.{extension}", "w")
     f.write("Woops! I have overwritten the content!")
 else:
@@ -306,6 +307,7 @@ if os.path.exists(write_to_file):
     overwrite = input(f"Enter the content to overwrite {write_to_file} with: ")
     user_concent = input(f"Do you wish to overwrite {write_to_file}? y/n: ")
     if user_concent == "y":
+        # only open if you wish to overwite otherwise, file becomes empty
         with open(f"{write_to_file}", "w") as f:
             f.write(overwrite)
     else:
