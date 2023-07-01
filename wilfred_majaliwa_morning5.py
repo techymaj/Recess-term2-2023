@@ -158,8 +158,6 @@ class ReceiptBook(ttk.Frame):
 
 
 if __name__ == "__main__":
-    # get the current working directory
-    cwd = os.getcwd()
-    app = ttk.Window("Wilfred Majaliwa's Receipt Book", "darkly", "receipt_maker.png")
+    app = ttk.Window("Wilfred Majaliwa's Receipt Book", "darkly")
     ReceiptBook(app)
     app.mainloop()

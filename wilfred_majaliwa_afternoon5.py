@@ -305,12 +305,14 @@ def main():
     try:
         with open("myfile.txt", "x") as f:
             f.write("Hello World")
+            f.close()
     except FileExistsError:
         print("The file already exists")
     with open("myfile.txt", "r") as f:
         print(f.read())
+        f.close()
 
-        
+
 if __name__ == "__main__":
     main()
 print("#" * 80)
