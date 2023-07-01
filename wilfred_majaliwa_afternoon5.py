@@ -152,9 +152,13 @@ print("\n")
 
 # create a file called demofile.txt with the contents "This is a demo file"
 print("#" * 80)
-print("create a file called demofile.txt with the contents 'This is a demo file'")
-f = open("demofile.txt", "w")
-f.write("This is a demo file")
+print("create a file with its contents")
+filename = input("Enter a filename: ")
+extension = input("Enter the extension of the file: (e.g txt, py, html etc) ")
+contents = input("Enter the contents of the file: ")
+
+f = open(f"{filename}.{extension}", "w")
+f.write(contents)
 f.close()
 print("#" * 80)
 print("\n")
@@ -162,7 +166,9 @@ print("\n")
 # To open a file for reading it is enough to specify the name of the file:
 print("#" * 80)
 print("To open a file for reading it is enough to specify the name of the file:")
-f = open("demofile.txt")
+print(f"Opening the file {filename}.{extension}...")
+f = open(f"{filename}.{extension}")
+print("Reading its contents...")
 print(f.read())
 print("#" * 80)
 print("\n")
@@ -170,7 +176,8 @@ print("\n")
 # Read Only Parts of the File
 print("#" * 80)
 print("Read Only Parts of the File")
-f = open("demofile.txt", "r")
+f = open(f"{filename}.{extension}", "r")
+print("Reading the first 5 characters...")
 print(f.read(5))
 print("#" * 80)
 print("\n")
@@ -178,7 +185,8 @@ print("\n")
 # Read Lines
 print("#" * 80)
 print("Read Lines")
-f = open("demofile.txt", "r")
+f = open(f"{filename}.{extension}", "r")
+print("Reading the first line...")
 print(f.readline())
 print("#" * 80)
 print("\n")
@@ -186,7 +194,8 @@ print("\n")
 # Close Files
 print("#" * 80)
 print("Close Files")
-f = open("demofile.txt", "r")
+f = open(f"{filename}.{extension}", "r")
+print("Closing the file...")
 print(f.readline())
 f.close()
 print("#" * 80)
@@ -194,36 +203,45 @@ print("\n")
 
 # Write to an Existing File
 print("#" * 80)
-print("Write to an Existing File")
-f = open("demofile.txt", "a")
-f.write("Now the file has more content!")
+print("Write to an Existing file")
+extra = input(f"Add extra content to the file {filename}.{extension}: ")
+f = open(f"{filename}.{extension}", "a")
+f.write(extra)
 f.close()
 #open and read the file after the appending:
-f = open("demofile.txt", "r")
+print("Opening and reading the file after appending...")
+f = open(f"{filename}.{extension}", "r")
 print(f.read())
+f.close()
 print("#" * 80)
 print("\n")
 
 # Overwrite the content
 print("#" * 80)
 print("Overwrite the content")
-f = open("demofile.txt", "w")
-f.write("Woops! I have deleted the content!")
+print("Opening and reading the file before overwriting...")
+y_n = input(f"Do you wish to overwrite {filename}.{extension}? y/n: ")
+if y_n == "y":
+    f = open(f"{filename}.{extension}", "w")
+    f.write("Woops! I have overwritten the content!")
+else:
+    print(f"{filename}.{extension} not overwritten")
 f.close()
 print("\n")
 
 #open and read the file after the overwriting:
 print("#" * 80)
-print("open and read the file after the overwriting:")
-f = open("demofile.txt", "r")
+print("open and read the file after attempted overwrite:")
+f = open(f"{filename}.{extension}", "r")
 print(f.read())
 print("#" * 80)
 print("\n")
 
 # Create a New File
 print("#" * 80)
-print("Create a New File")
-open("myfile.txt", "x")
+new_filename = input("Create a New File: ")
+its_extension = input("Enter the extension of the file: (e.g txt, py, html etc) ")
+open(f"{new_filename}.{its_extension}", "x")
 print("#" * 80)
 print("\n")
 
@@ -231,16 +249,19 @@ print("\n")
 print("#" * 80)
 print("Delete a File")
 import os
-os.remove("myfile.txt")
+filename_to_delete = input("Enter the filename to delete including its extension: ")
+os.remove(f"{filename_to_delete}")
 print("#" * 80)
 print("\n")
 
 # Check if File exist
 print("#" * 80)
-print("Check if File exist")
+print("Check if the deleted file exist")
+check_file = input("Enter the filename and its extension to check for it: ")
 import os
-if os.path.exists("demofile.txt"):
-    os.remove("demofile.txt")
+if os.path.exists(f"{check_file}"):
+    os.remove(f"{check_file}")
+    print(f"{check_file} has been deleted successfully")
 else:
     print("The file does not exist")
 print("#" * 80)
@@ -248,49 +269,49 @@ print("\n")
 
 # create a folder called myfolder
 print("#" * 80)
-print("create a folder called myfolder")
+print("create a folder called my_folder")
+new_folder = input("Enter the name of the folder to create: ")
 import os
-os.mkdir("myfolder")
+os.mkdir(f"{new_folder}")
 print("#" * 80)
 print("\n")
 
 # Delete Folder
 print("#" * 80)
 print("Delete Folder")
+delete_folder = input("Enter the name of the folder to delete: ")
 import os
-os.rmdir("myfolder")
-print("#" * 80)
-print("\n")
-
-# create a file called demofile.txt
-print("#" * 80)
-print("create a file called demofile.txt")
-open("demofile.txt", "x")
+os.rmdir(f"{delete_folder}")
 print("#" * 80)
 print("\n")
 
 # Read a file using with
 print("#" * 80)
 print("Read a file using with")
-with open("demofile.txt", "r") as f:
-    print(f.read())
+read_file = input("Enter the name of the file to read: (include its extension) ")
+if os.path.exists(read_file):
+    with open(f"{read_file}", "r") as f:
+        print(f"Reading {read_file}...")
+        print(f.read())
+else:
+    print(f"{read_file} does not exist")
 print("#" * 80)
 print("\n")
 
 # Write to a file using with
 print("#" * 80)
 print("Write to a file using with")
-with open("demofile.txt", "w") as f:
-    f.write("Hello World")
-print("#" * 80)
-print("\n")
-
-# Read and Write to a file using with
-print("#" * 80)
-print("Read and Write to a file using with")
-with open("demofile.txt", "r+") as f:
-    print(f.read())
-    f.write("Hello World")
+write_to_file = input("Enter the name of the file to write to: (include its extension). Careful as this will overwrite any content in that file. ")
+if os.path.exists(write_to_file):
+    overwrite = input(f"Enter the content to overwrite {write_to_file} with: ")
+    user_concent = input(f"Do you wish to overwrite {write_to_file}? y/n: ")
+    if user_concent == "y":
+        with open(f"{write_to_file}", "w") as f:
+            f.write(overwrite)
+    else:
+        print(f"{write_to_file} not overwritten")
+else:
+    print(f"{write_to_file} does not exist")
 print("#" * 80)
 print("\n")
 
@@ -300,15 +321,22 @@ print("\n")
 # add the content "Hello World" to the file, and then print the content of the file.
 # The file should be created in the same directory as the program and use exception handling.
 print("#" * 80)
-print("Using a main function, create a program that will create a file myfile.txt, add the content Hello World to the file, and then print the content of the file. The file should be created in the same directory as the program and use exception handling.")
+print(
+    """
+    Using a main function, create a program that will create a file myfile.txt, 
+    add the content Hello World to the file, and then print the content of the file. 
+    The file should be created in the same directory as the program and use exception handling.
+      """)
 def main():
+    myfile = input("Enter the filename and its extension: ")
+    myfile_content = input("Enter the content for the file: ")
     try:
-        with open("myfile.txt", "x") as f:
-            f.write("Hello World")
+        with open(f"{myfile}", "x") as f:
+            f.write(f"{myfile_content}")
             f.close()
     except FileExistsError:
         print("The file already exists")
-    with open("myfile.txt", "r") as f:
+    with open(f"{myfile}", "r") as f:
         print(f.read())
         f.close()
 
@@ -319,4 +347,7 @@ print("#" * 80)
 print("\n")
 
 
-
+print("\n")
+print("*" * 80)
+print("Congratulations!! You've reached the end of the program.")
+print("*" * 80)
