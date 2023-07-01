@@ -1,6 +1,6 @@
 # Author: Wilfred Majaliwa
 # Date: 2023-07-01
-# Description: A receipt printing program with a GUI
+# Description: A receipt printing program with a GUI Interface
 # Session: Morning
 # Github: https://github.com/techymaj/recess-2.git
 # Assignment: 5
