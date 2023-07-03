@@ -35,7 +35,7 @@
 - **[Receipt Book GUI App | Morning Session](https://github.com/techymaj/recess-2/blob/main/wilfred_majaliwa_morning5.py)** 🧾💡💼
 - **[Exception Handling & File Handling | Afternoon Session](https://github.com/techymaj/recess-2/blob/main/wilfred_majaliwa_afternoon5.py)** ❗️📄📂
 ### **Day 6**
-- **[Regex, Generators & Iterators, Decorators | Morning Session](https://github.com/techymaj/recess-2/blob/main/wilfred_majaliwa_morning6.py) 🧵🌀🎨
+- **[Regex, Generators & Iterators, Decorators | Morning Session](https://github.com/techymaj/recess-2/blob/main/wilfred_majaliwa_morning6.py)** 🧵🌀🎨
 
 ## **Python Project | Solidify concepts** 🚀💡
 ### Recipe for a great project (Guidelines) 📜🌟
