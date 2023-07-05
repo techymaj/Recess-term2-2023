@@ -17,6 +17,7 @@
 - **Object Oriented Programming**
   - **Classes** 🎩
   - **Encapsulation** 💼
+  - **Abstraction** ☁️
 
 ## **Exercises** 🏋️‍♀️
 ### **Day 1**
