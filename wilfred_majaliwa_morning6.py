@@ -1,4 +1,7 @@
 """
+Author: Majaliwa Wilfred
+Github repo: https://github.com/techymaj/recess-2.git
+
 DAY 6:
 - REGEX
 - GEnerators & Iterators

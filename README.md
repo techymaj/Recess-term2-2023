@@ -16,7 +16,7 @@
   - **Decorators** 🎨
   - **Context Managers** 🤌 
   - **Python Libraries** 📚
-    - **[pandas](https://github.com/techymaj/recess-2/blob/main/pandas.ipynb)** 🐼
+    - **[pandas](https://github.com/techymaj/recess-2/blob/main/wilfred_majaliwa_afternoon7.ipynb)** 🐼
   - **Multi-threading** 🧶🧶🧶
   - **Multi-processing** ⏳⏳⏳
 - **Object Oriented Programming**
@@ -45,7 +45,7 @@
 - **[Context Managers, Multi-Threading & Multi-Processing | Recorded Session ](https://github.com/techymaj/recess-2/blob/main/wilfred_majaliwa_morning6.py)** 🤌🧶⏳
 ### **Day 7**
 - **[Data Science Intro | Morning Session](https://github.com/techymaj/recess-2/blob/main/wilfred_majaliwa.ipynb)** 📊📈👨🏻‍💻
-- **[Python Libraries Intro. Pandas with Jupyter Notebook | Afternoon session](https://github.com/techymaj/recess-2/blob/main/pandas.ipynb)** 🐍📚
+- **[Python Libraries Intro. Pandas with Jupyter Notebook | Afternoon session](https://github.com/techymaj/recess-2/blob/main/wilfred_majaliwa_afternoon7.ipynb)** 🐍📚
 
 ## **Python Project | Solidify concepts** 🚀💡
 ### Recipe for a great project (Guidelines) 📜🌟
