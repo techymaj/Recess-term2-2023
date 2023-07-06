@@ -230,7 +230,7 @@ def open_file(filename):
 # The with keyword is used to create a context manager
 with open_file("data.txt") as file:
     contents = file.read()
-    print(contents)
+    # print(contents) # Something blue
 
 # A similar example using the contextlib.ContextDecorator class
 # import contextlib // Don't wan to import the contextlib module again
@@ -259,4 +259,121 @@ class OpenFile(contextlib.ContextDecorator):
 # providing a clean and concise way to handle file operations within a context.
 with OpenFile("data.txt") as file:
     contents = file.read()
-    print(contents)
+    # print(contents) # Something blue
+
+
+import time
+class Timer:
+    def __enter__(self):
+        self.start = time.time()
+        return self
+    
+    
+    def __exit__(self, *args):
+        self.end = time.time()
+        self.interval = self.end - self.start
+        # # This is why it prints the time taken even after commenting out the time.sleep(1) statement
+        # because the __exit__ method is called when exiting the with block
+        # print(f"Time taken: {self.interval} seconds") 
+
+
+with Timer() as timer:
+    # time.sleep(1) // Still prints the time taken even after commenting it out. TODO: Find out why
+    pass
+
+
+
+# MULTI-THREADING AND MULTI-PROCESSING
+# Multi-threading is a technique that allows a program to perform multiple tasks concurrently within a single process
+# Multi-processing is a technique that allows a program to use multiple cores of a CPU to perform multiple tasks concurrently
+
+
+# Multi-threading
+# Threads share the same memory space and can access the same data in memory concurrently.
+# Threads are lightweight and require less memory overhead than processes.
+import threading
+
+def task(name):
+    print(f"Task {name} has started")
+    for i in range(10000000):
+        pass
+    print(f"Task {name} has completed")
+
+
+# Create multiple threads
+t1 = threading.Thread(target=task, args=("t1",))
+t2 = threading.Thread(target=task, args=("t2",))
+
+
+# Start the threads
+# t1.start() # Task t1 has started
+# t2.start() # Task t2 has started
+
+
+# Wait for the threads to complete
+# t1.join() # Task t1 has completed
+# t2.join() # Task t2 has completed
+
+
+# MULTI-PROCESSING
+# Processes do not share the same memory space and cannot access the same data in memory concurrently.
+
+# Demonstrate the use of the multiprocessing module to create multiple processes
+import multiprocessing
+
+def process_task(name):
+    # print(f"Processing task {name}")
+    pass
+# The multiprocessing module spawns new processes by creating a new Python interpreter for each process. 
+# This bootstrapping process involves importing the necessary modules and preparing the environment for the new process. 
+# However, interactive environments, by default, already have an active Python interpreter running, 
+# and attempting to start a new process conflicts with the ongoing bootstrapping phase.
+
+# To resolve the RunTimeError issue, you can place your multiprocessing code inside the if __name__ == '__main__': block. 
+# This condition ensures that the code is only executed when the script is run as the main module, 
+# and not when it is imported as a module by another script or when running in an interactive environment.
+"""
+By enclosing the multiprocessing code within the if __name__ == '__main__': block, 
+you ensure that the code is executed only when running the script directly, 
+preventing conflicts with the bootstrapping process and resolving the RuntimeError."""
+if __name__ == '__main__':
+    # create a multiprocessing pool object with a specified number of worker processes
+    pool = multiprocessing.Pool(processes=3)
+    # processess is the number of worker processes to use. If processes is None then the number returned by os.cpu_count() is used.
+    # The pool of worker processes will execute the tasks concurrently, and you can control the level of parallelism by adjusting 
+    # the number of processes in the pool. In this case, with processes=3, at most three tasks will be executed concurrently.
+
+    # submit multiple tasks to the pool
+    for i in range(3):
+        pool.apply_async(process_task, args=(f"Process {i}",))
+
+    # close the pool and wait for the tasks to complete
+    pool.close()
+    pool.join()
+
+
+
+# COMBINE MULTI-THREADING AND MULTI-PROCESSING
+# Example:
+
+# import the necessary modules
+import threading, multiprocessing
+
+# define a function for the task
+def task(name):
+    print(
+        f"Task {name} running on process id {multiprocessing.current_process().pid}"
+        f"with thread id {threading.get_ident()}"
+        )
+
+
+# create multiple threads
+threads = []
+for i in range(2):
+    thread = threading.Thread(target=task, args=(f"Thread {i}",))
+    threads.append(thread)
+    thread.start()
+
+# wait for the threads to complete
+for thread in threads:
+    thread.join()
