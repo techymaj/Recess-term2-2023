@@ -363,7 +363,7 @@ import threading, multiprocessing
 def task(name):
     print(
         f"Task {name} running on process id {multiprocessing.current_process().pid}"
-        f"with thread id {threading.get_ident()}"
+        f" with thread id {threading.get_ident()}"
         )
 
 
@@ -372,7 +372,7 @@ threads = []
 for i in range(2):
     thread = threading.Thread(target=task, args=(f"Thread {i}",))
     threads.append(thread)
-    thread.start()
+    thread.start() # The results vary depending on the number of cores available on your machine.
 
 # wait for the threads to complete
 for thread in threads:
