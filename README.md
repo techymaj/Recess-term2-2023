@@ -14,6 +14,8 @@
   - **REGEX** 🧵
   - **Generators & Iterators** 🌀
   - **Decorators** 🎨
+  - **Context Managers** 🤌 
+  - **Python Libraries** 📚
 - **Object Oriented Programming**
   - **Classes** 🎩
   - **Encapsulation** 💼
@@ -39,6 +41,7 @@
 - **[Regex, Generators & Iterators, Decorators | Morning Session](https://github.com/techymaj/recess-2/blob/main/wilfred_majaliwa_morning6.py)** 🧵🌀🎨
 ### **Day 7**
 - **[Data Science Intro | Morning Session](https://github.com/techymaj/recess-2/blob/main/wilfred_majaliwa.ipynb)** 📊📈👨🏻‍💻
+- **[Python Libraries Intro. Pandas with Jupyter Notebook | Afternoon session]()** 🐍📚
 
 ## **Python Project | Solidify concepts** 🚀💡
 ### Recipe for a great project (Guidelines) 📜🌟

@@ -190,4 +190,73 @@ def say_hello():
     # This is the implementation to be added to the wrapper function
     print("Hello")
 
-say_hello()
+# say_hello() 
+# Before function call
+# Hello
+# After function call
+
+
+# ADVANCED PYTHON
+
+# Context Manager
+# Context manager is an object that defines a temporary context for the execution of a block of code
+
+# Benefits of context managers
+# 1. Resource management
+# 2. Exception handling
+# 3. Code simplification
+
+
+# Example 1: Demonstrate a context manager to open a file and return a context manager instance
+
+import contextlib
+
+# Define the open_file as a context manager
+@contextlib.contextmanager
+# By using the @contextlib.contextmanager decorator, you don't need to define a separate class for the context manager. 
+# The decorator takes care of creating the necessary class and implementing the context manager protocol for you.
+def open_file(filename):
+    file = open(filename, "r")
+
+    try:
+        # The yield statement is used to define the body of the __enter__ method
+        # The yield statement acts as a placeholder for the code inside the with block
+        # It allows the block to be executed, and then control is returned to the context manager to perform any necessary cleanup.
+        yield file
+    finally:
+        # The finally block is used to define the body of the __exit__ method
+        file.close()
+
+# The with keyword is used to create a context manager
+with open_file("data.txt") as file:
+    contents = file.read()
+    print(contents)
+
+# A similar example using the contextlib.ContextDecorator class
+# import contextlib // Don't wan to import the contextlib module again
+
+# In this example, the OpenFile class inherits from the contextlib.ContextDecorator class, 
+# which provides the necessary functionality for a context manager.
+class OpenFile(contextlib.ContextDecorator):
+    # The __init__ method initializes the OpenFile object with the provided filename attribute, 
+    # which represents the file to be opened.
+    def __init__(self, filename):
+        self.filename = filename # Initialize the filename attribute
+        self.file = None # Initialize the file object to None
+
+    def __enter__(self):
+        # The __enter__ method is called when entering the with block and opens the file. 
+        # It returns the file object, allowing you to use it within the block.
+        self.file = open(self.filename, "r")
+        return self.file
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        # The __exit__ method is called when exiting the with block. It is responsible for closing the file.
+        self.file.close()
+
+# The with keyword is used to create a context manager
+# Using the OpenFile class as a context decorator allows you to use it directly with the with statement, 
+# providing a clean and concise way to handle file operations within a context.
+with OpenFile("data.txt") as file:
+    contents = file.read()
+    print(contents)
