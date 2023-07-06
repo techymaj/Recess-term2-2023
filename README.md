@@ -16,6 +16,7 @@
   - **Decorators** 🎨
   - **Context Managers** 🤌 
   - **Python Libraries** 📚
+    - **[pandas](https://github.com/techymaj/recess-2/blob/main/pandas.ipynb)** 🐼
   - **Multi-threading** 🧶🧶🧶
   - **Multi-processing** ⏳⏳⏳
 - **Object Oriented Programming**
