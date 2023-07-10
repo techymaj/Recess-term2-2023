@@ -46,6 +46,8 @@
 ### **Day 7**
 - **[Data Science Intro | Morning Session](https://github.com/techymaj/recess-2/blob/main/wilfred_majaliwa.ipynb)** 📊📈👨🏻‍💻
 - **[Python Libraries Intro. Pandas with Jupyter Notebook | Afternoon session](https://github.com/techymaj/recess-2/blob/main/wilfred_majaliwa_afternoon7.ipynb)** 🐍📚🐼
+### **Day 8**
+- **[More Dataset Manipulation | Morning Session](https://github.com/techymaj/recess-2/blob/main/wilfred_majaliwa_morning8.ipynb)** 📊📈👨🏻‍💻
 
 ## **Python Project | Solidify concepts** 🚀💡
 ### Recipe for a great project (Guidelines) 📜🌟
