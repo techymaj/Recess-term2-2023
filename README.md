@@ -1,4 +1,5 @@
 # **Majaliwa Wilfred - Python3** ✨🐍
+With Mr. jeff Geoff & Livingstone Ndigezza. Supervised by Dr. Ruth
 ## **Topics** 📚
 - **Comments** 💬
 - **Variables** 📦
