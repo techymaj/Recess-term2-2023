@@ -1,4 +1,4 @@
-# **Majaliwa Wilfred - Python3** ✨🐍
+# **Majaliwa Wilfred ~ Recess-Term 2, 2023 | Python3** ✨🐍
 With Mr. Jeff Geoff & Mr. Livingstone Ndigezza. Supervised by Dr. Ruth
 ## **Topics** 📚
 - **Comments** 💬
