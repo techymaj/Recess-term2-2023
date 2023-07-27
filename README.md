@@ -49,6 +49,8 @@ With Mr. Jeff Geoff & Mr. Livingstone Ndigezza. Supervised by Dr. Ruth
 - **[Python Libraries Intro. Pandas with Jupyter Notebook | Afternoon session](https://github.com/techymaj/recess-2/blob/main/wilfred_majaliwa_afternoon7.ipynb)** 🐍📚🐼
 ### **Day 8**
 - **[More Dataset Manipulation | Morning Session](https://github.com/techymaj/recess-2/blob/main/wilfred_majaliwa_morning8.ipynb)** 📊📈👨🏻‍💻
+### **Last Day**
+- **[Last Day | Web Scrapping](https://github.com/techymaj/recess-2/blob/main/wilfred_majaliwa_lastday.py)**
 
 ## **Python Project | Solidify concepts** 🚀💡
 ### Recipe for a great project (Guidelines) 📜🌟
